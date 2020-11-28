@@ -1,0 +1,12 @@
+<p>
+  <strong>Name:</strong>
+  <%= @optional_module.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @optional_module.description %>
+</p>
+
+<%= link_to 'Edit', edit_optional_module_path(@optional_module) %> |
+<%= link_to 'Back', optional_modules_path %>
