@@ -10,7 +10,6 @@ class OptionalModulesController < ApplicationController
   # GET /optional_modules/1
   # GET /optional_modules/1.json
   def show
-    @module = OptionalModule.find(1)
   end
 
   # GET /optional_modules/new

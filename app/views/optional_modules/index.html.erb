@@ -1,29 +1,22 @@
-<p id="notice"><%= notice %></p>
+<div class="jumbotron">
+  <h1 class="display-4">Optional Modules</h1>
+  <p class="lead"></p>
+  <hr class="my-4">
+  <% @optional_modules.each do |optional_module| %>
+    <div class="card" style="width: 18rem;">
+      
+      <div class="card-body">
+        <h4 class="card-title"><%= optional_module.name %></h4>
+        <p class="card-text"><%= optional_module.description %></p>
+        <%= button_to 'Enrol', {remote: true, method: :get}, {class:'btn btn-dark'} %>
+        
+      </div>
+      <br/>
+    </div>
+  <% end %>
+</div>
 
-<h1>Optional Modules</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Description</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @optional_modules.each do |optional_module| %>
-      <tr>
-        <td><%= optional_module.name %></td>
-        <td><%= optional_module.description %></td>
-        <td><%= link_to 'Show', optional_module %></td>
-        <td><%= link_to 'Edit', edit_optional_module_path(optional_module) %></td>
-        <td><%= link_to 'Destroy', optional_module, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
 
 <br>
-
 <%= link_to 'New Optional Module', new_optional_module_path %>
