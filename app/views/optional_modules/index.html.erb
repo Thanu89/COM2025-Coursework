@@ -1,22 +1,19 @@
-<div class="jumbotron">
-  <h1 class="display-4">Optional Modules</h1>
-  <p class="lead"></p>
-  <hr class="my-4">
-  <% @optional_modules.each do |optional_module| %>
-    <div class="card" style="width: 18rem;">
-      
-      <div class="card-body">
-        <h4 class="card-title"><%= optional_module.name %></h4>
-        <p class="card-text"><%= optional_module.description %></p>
-        <%= button_to 'Enrol', {remote: true, method: :get}, {class:'btn btn-dark'} %>
-        
-      </div>
-      <br/>
+<body>
+  <section class="module">
+    <div class="row">
+      <h2 class="modules">Optional Modules</h2>
     </div>
-  <% end %>
-</div>
-
-
-
-<br>
-<%= link_to 'New Optional Module', new_optional_module_path %>
+    <div class="row">
+      <% @optional_modules.each do |optional_module| %>
+      <div class="card">
+        <div class="card-body">
+          <h4 class="card-title"><%= optional_module.name %></h4>
+          <p class="card-text"><%= optional_module.description %></p>
+          <%= button_to 'Enrol', {remote: true, method: :get}%>
+        </div>
+        <br/>
+      </div>
+      <% end %>
+    </div>
+  </section>
+</body>

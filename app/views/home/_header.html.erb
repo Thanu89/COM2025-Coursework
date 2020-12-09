@@ -1,4 +1,4 @@
-<!-- Image and text -->
+<!-- Image and text 
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <%= link_to 'COM2025 University', root_path, class:"navbar-brand" %>
   <div class="collapse navbar-collapse" id="navbarNav">
@@ -26,6 +26,35 @@
 
       <% end %>
       
+    </ul>
+  </div>
+</nav>
+-->
+<nav>
+  <div class="">
+    <%= image_tag("logo.svg", :alt => "logo", class:"logo") %>
+    <ul class="main-nav ml-auto">
+      <% if account_signed_in? %>
+        <li class="nav-item">
+        <%= link_to 'Sign Out', destroy_account_session_path, method: :delete, class:"nav-link" %>
+        </li>
+        <li class="nav-item">
+        <%= link_to 'Edit Profile', edit_account_registration_path, class:"nav-link" %>
+        </li>
+        <li class="nav-item">
+        <%= link_to 'Modules', optional_modules_path, class:"nav-link" %>
+        </li>
+        <li class="nav-item">
+        <%= link_to 'Contact Us', home_contactus_path, class:"nav-link" %>
+        </li>
+      <% else %>
+        <li class="nav-item">
+        <%= link_to 'Sign Up', new_account_registration_path, class:"nav-link" %>
+        </li>
+        <li class="nav-item">
+        <%= link_to 'Log In', new_account_session_path, class:"nav-link" %>
+        </li>
+      <% end %>
     </ul>
   </div>
 </nav>

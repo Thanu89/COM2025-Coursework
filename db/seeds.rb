@@ -6,7 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-english = OptionalModule.create([{name: 'Japanese', description: 'An optional module to learn English.'}])
+english = OptionalModule.create([{name: 'English', description: 'An optional module to learn English.'}])
 french = OptionalModule.create([{name: 'French', description: 'An optional module to learn French.'}])
 spanish = OptionalModule.create([{name: 'Spanish', description: 'An optional module to learn Spanish.'}])
 japanese = OptionalModule.create([{name: 'Japanese', description: 'An optional module to learn Japanese.'}])
