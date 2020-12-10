@@ -12,5 +12,5 @@ spanish = OptionalModule.create([{name: 'Spanish', description: 'An optional mod
 japanese = OptionalModule.create([{name: 'Japanese', description: 'An optional module to learn Japanese.'}])
 mandarin = OptionalModule.create([{name: 'Mandarin', description: 'An optional module to learn Mandarin.'}])
 finance = OptionalModule.create([{name: 'Finance', description: 'An optional module to learn about finance.'}])
-sports = OptionalModule.create([{name: 'Sports', description: 'An optional module to learn about sports and biology.'}])
+sports = OptionalModule.create([{name: 'Sports', description: 'An optional module to learn about sports.'}])
 music = OptionalModule.create([{name: 'Music', description: 'An optional module to learn music.'}])

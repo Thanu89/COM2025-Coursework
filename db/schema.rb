@@ -28,28 +28,13 @@ ActiveRecord::Schema.define(version: 2020_12_06_190556) do
   create_table "accounts_optional_modules", id: false, force: :cascade do |t|
     t.integer "account_id", null: false
     t.integer "optional_module_id", null: false
-    t.index ["account_id", "optional_module_id"], name: "my_index", unique: true
+    t.index ["account_id", "optional_module_id"], name: "my_index1", unique: true
+    t.index ["optional_module_id", "account_id"], name: "my_index2", unique: true
   end
 
   create_table "optional_modules", force: :cascade do |t|
     t.string "name"
     t.text "description"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "student_modules", force: :cascade do |t|
-    t.integer "student_id"
-    t.integer "module_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "students", force: :cascade do |t|
-    t.string "first_name"
-    t.string "last_name"
-    t.string "phone_number"
-    t.string "course"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
