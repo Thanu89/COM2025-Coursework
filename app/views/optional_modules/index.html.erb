@@ -8,7 +8,7 @@
       <div class="card">
         <div class="card-body">
           <h4 class="card-title"><%= optional_module.name %></h4>
-          <p class="card-text"><%= optional_module.description %> <%= optional_module.id %></p>
+          <p class="card-text"><%= optional_module.description %></p>
             <% if current_account.optional_modules.exists?(optional_module.id)%>
               <%= button_to 'Unenrol', optional_module_path(optional_module.id), method: :delete, data: { confirm: 'Are you sure?'} %>
             <% else %>

@@ -30,6 +30,7 @@ class OptionalModulesController < ApplicationController
         @accounts_optional_module = AccountsOptionalModule.new(account_id: @account, optional_module_id: @optional_module)
         respond_to do |format|
           if @account.optional_modules << @optional_module
+            AccountMailer.with(account: @account).enrol_email.deliver_now
             format.html { redirect_to optional_modules_path, notice: 'Enrolled successfully!.' }
             format.json { render :show, status: :ok, location: @accounts_optional_module }
           else
