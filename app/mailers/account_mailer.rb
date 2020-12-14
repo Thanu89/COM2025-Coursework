@@ -1,6 +1,6 @@
 class AccountMailer < Devise::Mailer
     helper :application
-    default from: 'thanuyogarajan80@gmail.com'
+    default from: 'COM2025@email.com'
 
     def enrol_email
         headers[:field_name] = "Enrolled Successfully!"

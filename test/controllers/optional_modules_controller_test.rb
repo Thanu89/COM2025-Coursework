@@ -5,22 +5,9 @@ class OptionalModulesControllerTest < ActionDispatch::IntegrationTest
     @optional_module = optional_modules(:one)
   end
 
-  test "should get index" do
-    get optional_modules_url
-    assert_response :success
-  end
-
   test "should get new" do
     get new_optional_module_url
     assert_response :success
-  end
-
-  test "should create optional_module" do
-    assert_difference('OptionalModule.count') do
-      post optional_modules_url, params: { optional_module: { description: @optional_module.description, name: @optional_module.name } }
-    end
-
-    assert_redirected_to optional_module_url(OptionalModule.last)
   end
 
   test "should show optional_module" do
@@ -38,11 +25,16 @@ class OptionalModulesControllerTest < ActionDispatch::IntegrationTest
     assert_redirected_to optional_module_url(@optional_module)
   end
 
-  test "should destroy optional_module" do
-    assert_difference('OptionalModule.count', -1) do
-      delete optional_module_url(@optional_module)
-    end
-
-    assert_redirected_to optional_modules_url
+  test "should fail optional_module validation" do
+    @optional_module_validation = OptionalModule.create()
+    @optional_module_validation.valid?
+    assert_not @optional_module_validation.errors[:name].empty?
   end
+
+  test "should fail account validation" do
+    @account_validation = Account.new()
+    @account_validation.valid?
+    assert_not @account_validation.errors[:email].empty?
+  end
+
 end
